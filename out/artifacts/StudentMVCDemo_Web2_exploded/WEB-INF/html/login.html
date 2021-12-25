@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Title</title>
+</head>
+<body>
+        <div class="container">
+                <article role="login">
+                    <form id="login_form"  action="LoginServlet" method="post">
+                        <h3 class="text-center"><i class="fa fa-lock"></i> Login</h3>
+                        <div class="form-group">
+                            <input type="text" id="username" name="username" placeholder="User Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Password"  required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" id="submiButton" onclick="check()" value="Login">
+                        </div>
+                    </form>
+                </article>
+        </div>
+    <script type="text/javascript">
+        function check() {
+            var username = document.getElementById("username")
+            var password = document.getElementById("password")
+            var code = document.getElementById("code")
+            if (username.value == "") {
+                alert("请输入用户名")
+            } else if (password.value == "") {
+                alert("请输入密码")
+            } else {
+                document.forms[0].submit()
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liujun.dao.StudentMapper">
+    <select id="getAllStudent" resultType="com.liujun.entity.Student">
+        select * from student
+    </select>
+
+    <update id="updateStudent">
+        update student  set sno =#{sno}, sname = #{sname}, age = #{age}
+        where sid = #{sid}
+    </update>
+
+    <delete id="deleteStudent" parameterType="int">
+        delete from student where sid = #{sid}
+    </delete>
+
+    <select id="getStudentById" resultType="com.liujun.entity.Student">
+        select sid, sno, sname, age from student where sid = #{sid}
+    </select>
+
+    <insert id="addStudent" parameterType="com.liujun.entity.Student">
+        insert into student(sid, sno, sname, age) values (#{sid}, #{sno},#{sname},#{age})
+    </insert>
+
+</mapper>
